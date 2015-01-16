@@ -7,18 +7,18 @@ var rename = require('gulp-rename');
 var path = require('path');
 
 /************* Tasks *************/
-gulp.task('looklib', function() {
-  return gulp.src('lib/Look.js')
+gulp.task('minifyconjugate', function() {
+  return gulp.src('lib/*.js')
         .pipe(uglify())
-        .pipe(rename('Look.min.js'))
-        .pipe(gulp.dest('lib'));
+        .pipe(rename('Conjugate.min.js'))
+        .pipe(gulp.dest('lib/compile'));
 })
 
-gulp.task('buildlook', function() {
-  return gulp.src(['lib/look.dom.js','lib/look.language.js'])
-  .pipe(concat('Look.js'))
-  .pipe(gulp.dest('lib'));
+gulp.task('buildconjugate', function() {
+  return gulp.src('lib/*js')
+  .pipe(concat('Conjugate.js'))
+  .pipe(gulp.dest('lib/compile'));
 })
 
 
-gulp.task('default', ['looklib']);
+gulp.task('default', ['buildconjugate']);
