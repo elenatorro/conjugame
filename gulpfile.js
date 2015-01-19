@@ -14,11 +14,11 @@ gulp.task('minifyconjugate', function() {
         .pipe(gulp.dest('lib/compile'));
 })
 
-gulp.task('buildconjugate', function() {
+gulp.task('build', function() {
   return gulp.src('lib/*js')
   .pipe(concat('Conjugate.js'))
   .pipe(gulp.dest('lib/compile'));
 })
 
 
-gulp.task('default', ['buildconjugate']);
+gulp.task('default', ['build', 'minifyconjugate']);
