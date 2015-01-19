@@ -40,7 +40,7 @@ testBuscarRaiz('o','ar');
 function testBuscarRaiz2(cadena, conjugacion) {
   QUnit.test(cadena, function(assert) {
     var raiz = c.conjugar(cadena, 'ir');
-    assert.equal(raiz, '2#condicional|simple#plural')
+    assert.equal(raiz, '2#condicional simple#plural')
   })
 }
 
